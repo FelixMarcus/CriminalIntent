@@ -1,9 +1,13 @@
 package com.bignerdranch.android.criminalintent;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,8 +54,10 @@ public class CrimeFragment extends Fragment {
 			
 		});
 		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("cccc, dd-MM-yyyy", Locale.UK);
+		
 		mDateButton = (Button)v.findViewById(R.id.crime_date);
-		mDateButton.setText(mCrime.getDate().toString());
+		mDateButton.setText(dateFormat.format(mCrime.getDate()));
 		mDateButton.setEnabled(false);
 		
 		mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
