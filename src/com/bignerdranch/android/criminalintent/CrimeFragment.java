@@ -37,7 +37,7 @@ public class CrimeFragment extends Fragment {
 		mTitleField = (EditText)v.findViewById(R.id.crime_title);
 		mTitleField.addTextChangedListener(new TextWatcher(){
 			public void onTextChanged(CharSequence c, int start, int before, int count){
-				mCrime.setmTitle(c.toString());
+				mCrime.setTitle(c.toString());
 			}
 
 			@Override
